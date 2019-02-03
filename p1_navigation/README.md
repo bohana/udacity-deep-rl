@@ -103,9 +103,33 @@ replay_update_freq.csv - scores for update frequency experiment
 * download the Banana Unity app into the same directory as the jupyter notebook (`<ROOT>/p1_navigation`) (https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana.app.zip)
 * run the jupyter notebook.
 
+## Possible Improvements
+
+Since DQNs first appeared, a number of improvements to speed up learning have been proposed. These make useful next steps candidates for this implementation:
+
+* Prioritized Experience Replay [3] - Instead of uniformily sampling experiences from the replay buffer for learning, keep track of the "most important" ones (using the calculated TD error as a proxy) to prioritize sampling.
+
+* Duelling DQNs [5] - decouple estimation of state and action values, then aggregate again to estimate `Q*`. 
+
+An informal discussion on these improvements can be found in this Medium post:
+* https://medium.freecodecamp.org/improvements-in-deep-q-learning-dueling-double-dqn-prioritized-experience-replay-and-fixed-58b130cc5682
+
+* In addition, a study presented in [4] indicates using many of the above strategies together (the "rainbow" strategy) also proves beneficial.
+
+* Empirical evidence from other assignment suggest a learning rate decay schedule is useful to speed up learning: https://github.com/SIakovlev/Navigation
+
+* Finally, other ideas explore the experience replay buffer. In [6], a combined strategy that samples from the online network and the buffer is used to speed up learning.
+
 ## References
 
 [1] - "Human-level control through deep reinforcement learning" - Mnih et al, Feb/2015 (Nature) - https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf
 
 [2] - Note on state description:  https://github.com/Unity-Technologies/ml-agents/issues/1134
 
+[3] - Prioritized Experience Replay: https://arxiv.org/abs/1511.05952
+
+[4] - Rainbow: https://arxiv.org/pdf/1710.02298.pdf
+
+[5] - Duelling DQNs: https://arxiv.org/pdf/1511.06581.pdf
+
+[6] - A deeper look at experience replay: https://arxiv.org/abs/1712.01275
