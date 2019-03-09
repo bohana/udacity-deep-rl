@@ -131,11 +131,3 @@ README.md                     - this file.
 [3] - https://www.quora.com/Why-do-we-use-the-Ornstein-Uhlenbeck-Process-in-the-exploration-of-DDPG
 
 [4] - Prioritized experience replay - https://arxiv.org/abs/1511.05952
-
----
-
-# Assignment Starts
-
-### 1. Start the Environment
-
-Next cell will load the _single agent_ version of the assignment.
